@@ -93,10 +93,18 @@
 .langkah-kanan>.kotak{
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: white;
+    box-shadow: 1px 1px 0.5vw black;
     border-bottom-right-radius: 5% 25%;
     border-top-right-radius: 5% 25%;
     border-top-left-radius: 15% 90%;
+    display: flex;
+    text-align: end;
+    align-items: center;
+    justify-content: end;
+    gap: 3vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
 }
 
 .langkah-kiri{
@@ -116,8 +124,16 @@
 .langkah-kiri>.kotak{
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: white;
+    box-shadow: 1px 1px 0.5vw black;
     border-bottom-left-radius: 5% 25%;
     border-top-right-radius: 15% 95%;
     border-top-left-radius: 5% 30%;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    padding-left: 2vw;
+}
+.kotak>img{
+    height: 10vw;
 }
