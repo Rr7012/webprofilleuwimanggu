@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.header .nav a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white    ;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.bgk {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    z-index: -2;
+    position: absolute;
+}
+
+.bg {
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+}
+
+.header .nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    padding: 50px 50px 10px 10px;
+    color: white;
+    font-size: small;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header .nav .menu:hover {
+    font-weight: bold;
+}
+
+.header .nav .aktif {
+    border-bottom: 2px solid orange;
+    padding-bottom: 5px;
+}
+
+.judul {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.j1, .j2, .j3 {
+    font-style: italic;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.j1 {
+    color: orange;
+    margin-top: 7%;
+    margin-bottom: -1vw;
+    font-size: 4vw;
+}
+
+.j2 {
+    font-size: 7vw;
+    margin-bottom: -1vw;
+}
+
+.j3 {
+    color: orange;
+    font-size: 4vw;
+    margin-bottom: 5%;
+}
+
+.menuUtama {
+    display: flex;
+    justify-content: center;
+    padding: 20px 5%;
+    gap: 10px;
+    /* flex-wrap: wrap; */
+}
+
+.menuUtama .konten {
+    opacity: 0.8;
+    background-color: black;
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuUtama .konten .utama {
+    color: white;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center ;
+    gap: 15px;
+    width: 100%;
+}
+
+.menuUtama .konten .utama .img {
+    width: 60px;
+    height: 60px;
+    margin-right: 2vw;
+    background-color: white;
+}
+
+.menuUtama .konten .utama p {
+    font-size: clamp(2vw, 4vw, 18px);
+    font-weight: bold;
+}
+
+.menuUtama .konten .utama .view {
+    display: flex;
+    color: orange;
+    font-size: x-small;
+    margin-top: 10px;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0px;
+}
+
+footer .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    gap: 10px;
+}
+
+footer .menu img {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    margin-left: 10px;
+}
+
+footer .nomor,
+footer .mail {
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.menuUtama .konten:hover {
+    opacity: 0.85;
+}
+
+/* ----------------------- */
+/* MEDIA QUERY: Mobile */
+/* ----------------------- */
+
+@media (max-width: 768px) {
+    .header .nav {
+        justify-content: center;
+        font-size: 3vw;
+        gap: 3vw;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    .judul {
+        margin-top: 15vw;
+    }
+
+    .judul .j1{
+        font-size: 6vw;
+    }
+    .judul .j2{
+        font-size: 10vw;
+    }
+    .judul .j3{
+        font-size: 6vw;
+        margin-bottom: 15vw;
+    }
+
+    .menuUtama {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .menuUtama .konten {
+        width: 90%;
+        margin-bottom: -2vw;
+    }
+
+    .menuUtama .konten .utama {
+        margin-left: 6vw;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .menuUtama .konten .utama .img{
+        margin-right: 6vw;
+    }
+    .menuUtama .konten .utama p {
+        font-size: 5vw;
+    }
+
+    footer{
+        display: none;
+    }
+}
