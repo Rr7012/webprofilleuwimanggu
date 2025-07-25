@@ -50,7 +50,7 @@ body {
 }
 
 .header .nav .aktif {
-    border-bottom: 2px solid orange;
+    border-bottom: 0.3vw solid rgb(70, 110, 255);
     padding-bottom: 5px;
 }
 
@@ -115,10 +115,18 @@ body {
 }
 
 .menuUtama .konten .utama .img {
-    width: 60px;
-    height: 60px;
+    width: 6vw;
+    height: 6vw;
     margin-right: 2vw;
     background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img>img{
+    height: 100%;
 }
 
 .menuUtama .konten .utama p {
@@ -158,6 +166,16 @@ footer .menu img {
     margin-left: 10px;
 }
 
+#reg{
+    width: 80%;
+    height: 80%;
+}
+#school{
+    width: 80%;
+    height: 80%;
+    margin-bottom: 1vw;
+}
+
 footer .nomor,
 footer .mail {
     font-weight: bold;
@@ -167,6 +185,7 @@ footer .mail {
 .menuUtama .konten:hover {
     opacity: 0.85;
 }
+
 
 /* ----------------------- */
 /* MEDIA QUERY: Mobile */
