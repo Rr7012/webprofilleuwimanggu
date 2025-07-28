@@ -1,0 +1,179 @@
+.konten{
+    padding: 8vw 5vw 0;
+    box-sizing: border-box;
+}
+.background{
+    justify-content: center;
+    background-image: url(image/background/awan.jpeg);
+    background-size: 100vw;
+    top: 0;
+    left: 0;
+    background-position-y: 50%;
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.konten{
+    display: flex;
+    gap: 1vw;
+}
+.konten>.kiri{
+    width: 65%;
+    min-height: 37vw;
+    box-sizing: border-box;
+}
+.kiri>.atas{
+    width: 100%;
+    height: 3.5vw;
+    border-top-left-radius: 5% 80%;
+    border-top-right-radius: 5% 80%;
+    background-color: white;
+}
+.tengah{
+    min-height: 30vw;
+    width: 100%;
+    background-color: white;
+    padding: 0 3vw;
+    box-sizing: border-box;
+}
+.kiri>.bawah{
+    width: 100%;
+    height: 3.5vw;
+    border-bottom-left-radius: 5% 80%;
+    border-bottom-right-radius: 5% 80%;
+    background-color: white;
+}
+
+.konten>.kanan{
+    width: 35%;
+    min-height: 37vw;
+    box-sizing: border-box;
+}
+.kanan>.atas{
+    width: 100%;
+    height: 3.5vw;
+    border-top-left-radius: 10% 80%;
+    border-top-right-radius: 10% 80%;
+    background-color: white;
+}
+.kanan>.bawah{
+    width: 100%;
+    height: 3.5vw;
+    border-bottom-left-radius: 10% 80%;
+    border-bottom-right-radius: 10% 80%;
+    background-color: white;
+}
+.cari{
+    border-bottom: 0.2vw solid rgb(0, 0, 0, 0.3);
+    padding-bottom: 1vw;
+}
+#cari{
+    width: 75%;
+    padding: 0vw 1vw;
+    box-sizing: border-box;
+}
+#btn-cari{
+    width: 20%;
+    background-color: lightblue;
+    border: 0.3vw solid lightblue;
+    border-radius: 20% / 50%;
+}
+#btn-cari:hover{
+    filter:brightness(80%);
+}
+.listberita{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    padding-top: 0.5vw;
+}
+.berita{
+    width: 100%;
+    height: 6.2vw;
+    background-color: rgb(0, 132, 255, 0.2);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 5% / 15%;
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+.berita:hover{
+background-color: rgb(0, 132, 255, 0.35);
+}
+.foto-berita{
+    width: 30%;
+    height: 100%;
+    border-radius: 20%;
+    box-shadow: 1px 1px 1vw rgb(69, 155, 253);
+    background-color: rgb(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.judul-berita{
+    width: 63%;
+    font-size: 1vw;
+    margin: 2vw 0;
+    box-sizing: border-box;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;       /* Batas maksimal 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tanggal{
+    opacity: 0.7;
+}
+.judul-konten-berita{
+    border-top: 0.1vw solid;
+    border-bottom: 0.1vw solid;
+    height: 7vw;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1vw 5vw;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foto-konten-berita{
+    width: 50%;
+    height: 15vw;
+    background-color: rebeccapurple;
+    float: left;
+    margin-right: 1vw;
+    border-radius: 5% / 7%;
+    overflow: hidden;
+}
+.foto-konten-berita>img{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.konten-berita{
+    margin-top: 3vw;
+    text-indent: 2vw;
+}
+.konten-berita>p{
+    margin-top: 0.5vw;
+    text-align: justify;
+}
+.footer{
+    border-top: 0.1vw solid;
+    margin-top: 2vw;
+    padding-top: 2vw;
+    display: flex;
+    justify-content: center;
+}
+.element{
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    gap: 0.4vw;
+    margin-bottom: 1vw;
+    margin-right: 3vw;
+}
+.element>img{
+    width: 2.5vw;
+}
