@@ -1,9 +1,10 @@
     const items = [];
     for (let i = 1; i <= 50; i++) {
-        items.push("Item " + i);
+        // items.push("Item " + i);
+        items.push("SDN Leuwimanggu Gelar Lomba Hari Kemerdekaan ke-80");
     }
 
-    const itemsPerPage = 6;
+    const itemsPerPage = 9;
     let currentPage = 1;
 
     function displayItems(items, container, page, perPage) {
@@ -13,12 +14,33 @@
         const paginatedItems = items.slice(start, end);
 
         for (let item of paginatedItems) {
-            const div = document.createElement("div");
-            div.className = "berita";
-            div.textContent = item;
-            container.appendChild(div);
+            const a = document.createElement("a");
+            a.href = "berita.html";
+            a.className = "berita";
+            a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+            a.addEventListener('mouseenter', () => {
+                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.9) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+            })
+            a.addEventListener('mouseleave', () => {
+                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+            })
+            a.sty
+
+
+            const judulFotoDiv = document.createElement("div");
+            judulFotoDiv.className = "judul-foto";
+            
+
+            const h3 = document.createElement("h3");
+            h3.textContent = item; // Gunakan item sebagai judul
+
+            judulFotoDiv.appendChild(h3);
+            a.appendChild(judulFotoDiv);
+
+            container.appendChild(a);
         }
     }
+
 
     function setupPagination(items, container, perPage) {
         container.innerHTML = "";
@@ -37,22 +59,21 @@
         container.appendChild(prevBtn);
 
         // Hitung range halaman
-        let startPage = Math.max(currentPage - 2, 1);
-        let endPage = Math.min(currentPage + 2, pageCount);
+        let startPage = Math.max(currentPage - 1, 1);
+        let endPage = Math.min(currentPage + 1, pageCount);
 
         // Penyesuaian jika halaman kurang dari 5
-        if (endPage - startPage < 4) {
+        if (endPage - startPage < 2 ) {
             if (startPage === 1) {
-                endPage = Math.min(startPage + 4, pageCount);
+                endPage = Math.min(startPage + 2, pageCount);
             } else if (endPage === pageCount) {
-                startPage = Math.max(endPage - 4, 1);
+                startPage = Math.max(endPage - 2, 1);
             }
         }
 
         // Tombol halaman pertama dan ellipsis awal
         if (startPage > 1) {
-            container.appendChild(createButton(1));
-            if (startPage > 2) {
+            if (startPage >= 2) {
                 container.appendChild(createEllipsis());
             }
         }
@@ -65,10 +86,9 @@
 
         // Ellipsis akhir dan tombol halaman terakhir
         if (endPage < pageCount) {
-            if (endPage < pageCount - 1) {
+            if (endPage <= pageCount - 1) {
                 container.appendChild(createEllipsis());
             }
-            container.appendChild(createButton(pageCount));
         }
 
         // Tombol Next
@@ -86,7 +106,7 @@
 
     function createEllipsis() {
         const span = document.createElement("span");
-        span.textContent = "...";
+        // span.textContent = "...";
         span.className = "ellipsis";
         return span;
     }

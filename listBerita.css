@@ -10,6 +10,11 @@
     width: 100%;
     height: 100%;
 }
+.konten-container{
+    width: 100%; 
+    padding: 4vw 5vw 0;
+    box-sizing: border-box;
+}
 .konten{
     display: flex;
     width: 100%; 
@@ -37,8 +42,9 @@
 .tengah>.judul{
     width: 100%;
     text-align: center;
+    font-size: 1.7vw;
     border-bottom: 0.2vw solid rgb(0,0,0,0.3);
-    padding-bottom: 2vw;
+    padding-bottom: 1vw;
 }
 .konten>.bawah{
     width: 100%;
@@ -57,9 +63,19 @@
 .berita{
     width: 20vw;
     height: 15vw;
-    background-color: red;
+    text-decoration: none;
+    color: white;
+    border-radius: 5%;
+    box-shadow: 0.4vw 0.4vw 0.9vw black;
 }
-
+.pagination{
+    margin-bottom: 1vw;
+    display: flex;
+    gap: 0.2vw  ;
+}
+.pagination button{
+    width: 3vw;
+}
 .pagination button.active {
     background-color: #007bff;
     color: white;
@@ -67,4 +83,20 @@
 .pagination button:disabled {
     background-color: #ccc;
     cursor: default;
+}
+.judul-foto{
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding: 1vw 1vw;
+    box-sizing: border-box;
+}
+.judul-foto>h3{
+    box-sizing: border-box;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;       /* Batas maksimal 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
