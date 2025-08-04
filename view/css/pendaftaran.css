@@ -5,7 +5,7 @@
 }
 .background{
     justify-content: center;
-    background-image: url(image/background/awan.jpeg);
+    background-image: url(../../image/background/awan.jpeg);
     background-size: 100vw;
     top: 0;
     left: 0;

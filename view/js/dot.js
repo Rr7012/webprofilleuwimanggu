@@ -4,7 +4,7 @@ const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const dotsContainer = document.getElementById("dotsContainer");
 
-const slidesPerView = 3;
+const slidesPerView = 2;
 const totalGroups = Math.ceil(slides.length / slidesPerView);
 let currentIndex = 0;
 

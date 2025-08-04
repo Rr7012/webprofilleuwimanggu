@@ -7,7 +7,7 @@
 }
 .background{
     justify-content: center;
-    background-image: url(image/background/awan.jpeg);
+    background-image: url(../../image/background/awan.jpeg);
     background-size: 100vw;
     top: 0;
     left: 0;
@@ -97,7 +97,7 @@
 }
 .slide{
     padding: 0.1vw;
-    flex: 0 0 calc(33.33% - 0.1vw);
+    flex: 0 0 calc(50% - 0.1vw);
     scroll-snap-align: start;
 }
 .slide img{
@@ -143,6 +143,7 @@
     padding-bottom: 1vw;
     border-bottom: 0.2vw solid rgb(0,0,0,0.3);
 }
+
 .dots .dot{
     display: inline-block;
     height: 12px;
@@ -152,10 +153,20 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
 .slider-container{
     display: flex;
     flex-direction: column;
 }
+
 .dots .dot.active{
     background-color: #333;
+}
+
+.informasi-lainnya{
+    width: 100%;
+    margin-top: 2vw;
+}
+.informasi-lainnya ul{
+    padding-left: 1.5vw;
 }

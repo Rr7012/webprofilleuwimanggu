@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Input Berita dengan Banyak Konten</title>
+  <style>
+    .konten-block {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Input Berita</h2>
+  <form id="beritaForm">
+    <label for="judul">Judul:</label><br>
+    <input type="text" id="judul" name="judul" required><br><br>
+
+    <label for="foto">URL Foto:</label><br>
+    <input type="url" id="foto" name="foto"><br><br>
+
+    <div id="kontenContainer">
+      <div class="konten-block">
+        <label>Isi Konten:</label><br>
+        <textarea name="isiKonten" rows="4" cols="40" required></textarea>
+      </div>
+    </div>
+
+    <button type="button" id="addKontenBtn">+ Tambah Konten</button><br><br>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkCWMaH4T2W7Ix2VaHPmA4eD7c88dvpXk",
+      authDomain: "webprofilesdn.firebaseapp.com",
+      databaseURL: "https://webprofilesdn-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "webprofilesdn",
+      storageBucket: "webprofilesdn.appspot.com",
+      messagingSenderId: "338937569949",
+      appId: "1:338937569949:web:7c2f9fcfdbd97784bbaa74",
+      measurementId: "G-PX6RRFQQGL"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('beritaForm');
+    const kontenContainer = document.getElementById('kontenContainer');
+    const addKontenBtn = document.getElementById('addKontenBtn');
+    const status = document.getElementById('status');
+
+    // Tambah blok konten baru
+    addKontenBtn.addEventListener('click', () => {
+      const block = document.createElement('div');
+      block.className = 'konten-block';
+      block.innerHTML = `
+        <label>Isi Konten:</label><br>
+        <textarea name="isiKonten" rows="4" cols="40" required></textarea>
+        <button type="button" onclick="this.parentElement.remove()">Hapus</button>
+      `;
+      kontenContainer.appendChild(block);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Ambil semua isi konten
+      const isiKontenList = Array.from(document.getElementsByName('isiKonten'));
+      const konten = isiKontenList.map((textarea, index) => ({
+        id: Date.now() + index, // ID unik per konten
+        isi: textarea.value
+      }));
+
+      const berita = {
+        id: Date.now(),
+        judul: form.judul.value,
+        foto: form.foto.value,
+        konten: konten,
+        tanggal: new Date().toISOString().split('T')[0]
+      };
+
+      try {
+        await addDoc(collection(db, "berita"), berita);
+        status.textContent = "Berita berhasil disimpan!";
+        form.reset();
+        kontenContainer.innerHTML = `
+          <div class="konten-block">
+            <label>Isi Konten:</label><br>
+            <textarea name="isiKonten" rows="4" cols="40" required></textarea>
+          </div>
+        `;
+      } catch (error) {
+        console.error("Gagal menyimpan berita:", error);
+        status.textContent = "Terjadi kesalahan saat menyimpan data.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Daftar Berita</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .berita {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
-    .berita img {
-      max-width: 100%;
-      height: auto;
-    }
-    .konten-item {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Daftar Berita</h1>
-  <div id="beritaList">Memuat data...</div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
@@ -48,7 +17,7 @@
     const analytics = getAnalytics(app);
     const db = getFirestore(app);
 
-    const beritaList = document.getElementById("item-container");
+    const beritaList = document.getElementById("beritaList");
 
     async function tampilkanBerita() {
       try {
@@ -86,7 +55,4 @@
       }
     }
 
-    tampilkanBerita();
-  </script>
-</body>
-</html>
+    // tampilkanBerita();

@@ -17,12 +17,12 @@
             const a = document.createElement("a");
             a.href = "berita.html";
             a.className = "berita";
-            a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+            a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("../image/gambar/hut.jpeg")`;
             a.addEventListener('mouseenter', () => {
-                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.9) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.9) 30%, transparent 50%), url("../image/gambar/hut.jpeg")`;
             })
             a.addEventListener('mouseleave', () => {
-                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("./image/gambar/hut.jpeg")`;
+                a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0, 0.5) 30%, transparent 50%), url("../image/gambar/hut.jpeg")`;
             })
             a.sty
 
