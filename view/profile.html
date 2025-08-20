@@ -6,21 +6,24 @@
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    
     <title>Informasi SDN Leuwimanggu</title>
 </head>
 <body>
     <div class="container"> 
         <div class="header">
             <div class="nav">
-                <a href="index.html" class="menu home">HOME</a>
+                <a href="../index.html" class="menu home">HOME</a>
                 <a href="profile.html" class="aktif menu tentang">PROFILE</a>
                 <a href="pendaftaran.html" class="menu pendaftaran">PENDAFTARAN</a>
                 <a href="listBerita.html" class="menu event">BERITA</a>
-                <a href="galery.html" class="menu galery">GALERY</a>
             </div>
         </div>
         <div class="kotak-kosong"></div>
         <div class="wejangan">
+            <img src="../image/logo/email.png" class="logo-pesan">
+            <marquee behavior="scroll" direction="left" class="bergilir"><div id="wejangan"></div></marquee>
+            <img src="../image/logo/email.png" class="logo-pesan">
         </div>
         <div class="konten-container">
             <div class="background"></div>
@@ -32,20 +35,7 @@
                     </div>
                     <div class="isi">
                         <div class="slider-container">
-                            <div class="slider-track" id="sliderTrack">
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                                <div class="slide"><img src="../background.JPG" alt=""></div>
-                            </div>
+                            <div class="slider-track" id="sliderTrack"></div>
                             <button class="na prev" id="prev">&#10094;</button>
                             <button class="na next" id="next">&#10095;</button>
 
@@ -53,22 +43,18 @@
 
                         </div>
                         <div class="foto">
-                            <img src="../image/gambar/hut.jpeg">
+                            <img src="">
                         </div>
-                        <h3>SD NEGERI LEUWIMANGGU</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae hic minus laboriosam sit nihil velit magnam ea exercitationem mollitia repellendus aut excepturi optio, labore sapiente tempora. Nostrum nemo corrupti atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae hic minus laboriosam sit nihil velit magnam ea exercitationem mollitia repellendus aut excepturi optio, labore sapiente tempora. Nostrum nemo corrupti atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae hic minus laboriosam sit nihil velit magnam ea exercitationem mollitia repellendus aut excepturi optio, labore sapiente tempora. Nostrum nemo corrupti atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae hic minus laboriosam sit nihil velit magnam ea exercitationem mollitia repellendus aut excepturi optio, labore sapiente tempora. Nostrum nemo corrupti atque.</p>
-                        
+                        <div class="judul">
+                            <h3>PROFILE SEKOLAH</h3>
+                        </div>
                     </div>
                     <div class="informasi-lainnya">
                         <h4>INFORMASI LAINNYA</h4>
                         <br>    
                         <ul>
-                            <li><a href="#">Informasi Persyaratan Pendaftaran</a></li>
-                            <li><a href="#">Informasi Mata Pelajaran</a></li>
-                            <li><a href="#">Informasi Guru</a></li>
+                            <li><a href="pendaftaran.html">Informasi Persyaratan Pendaftaran</a></li>
+                            <li><a href="../file/matapelajaran.pdf" download>Informasi Mata Pelajaran</a></li>
                         </ul>
                         <br><br><br>
                     </div>
@@ -88,7 +74,7 @@
                                 <td>
                                     <div class="element">
                                         <img src="../image/logo/wa.png">
-                                        <p>087772876750</p>
+                                        <p>-</p>
                                     </div>
                                     <div class="element">
                                         <img src="../image/logo/location.png">
@@ -104,6 +90,9 @@
         </div>
     </div>
     <script src="./js/dot.js"></script>
-    
+    <script type="module" src="./js/profile.js"></script>
+
+
+
 </body>
 </html>

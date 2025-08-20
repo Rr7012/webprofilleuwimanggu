@@ -12,7 +12,7 @@
 }
 .konten-container{
     width: 100%; 
-    padding: 4vw 5vw 0;
+    padding: 0 5vw 0;
     box-sizing: border-box;
 }
 .konten{
@@ -56,14 +56,16 @@
 #item-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 2vw 0;
+    /* justify-content: center; */
+    margin: 2vw 3vw;
     gap: 2vw;
 }
 .berita{
     width: 20vw;
     height: 15vw;
     text-decoration: none;
+    background-size: 100%;
+    background-position: center;
     color: white;
     border-radius: 5%;
     box-shadow: 0.4vw 0.4vw 0.9vw black;
@@ -91,12 +93,26 @@
     padding: 1vw 1vw;
     box-sizing: border-box;
 }
+.judul-foto>img{
+    width: 100%;
+}
 .judul-foto>h3{
     box-sizing: border-box;
+    font-size: 1.5vw;
 
     display: -webkit-box;
     -webkit-line-clamp: 2;       /* Batas maksimal 3 baris */
     -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.judul-foto>h3:hover{
+    font-size: 1.1vw;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* Batas maksimal 3 baris */
+    -webkit-box-orient: vertical;
+    /* margin-top: 5vw; */
     overflow: hidden;
     text-overflow: ellipsis;
 }

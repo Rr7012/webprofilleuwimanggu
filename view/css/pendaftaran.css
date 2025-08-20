@@ -20,7 +20,7 @@
     flex-direction: column;
     height: auto;
     width: 100%;
-    padding: 7vw 10vw 0;
+    padding: 2vw 10vw 0;
     box-sizing: border-box;
 }
 .konten>.judul{
@@ -34,9 +34,10 @@
 }
 .konten>.judul>img{
     height: 25vw;
-    background-origin: white;
+    /* background-origin: white; */
     border: 3vw solid white;
-    border-radius: 10% / 20%;
+    box-shadow: 1px 1px 0.5vw black;
+    /* border-radius: 10% / 20%; */
     margin-bottom: 3vw;
 }
 .langkah-kanan{
@@ -128,4 +129,29 @@ td>.about{
 td>.about>img{
     width: 2.5vw;
     margin-right: 0.5vw;
+}
+
+@media (max-width: 768px) {
+    .background{
+        background-size: 400vw;
+    }
+    .konten>.judul>img{
+        height: 30vw;
+        margin: 5vw 0;
+    }
+    .langkah-kanan{
+        height: 20vw;
+    }
+    .langkah-kiri{
+        height: 20vw;
+    }
+    .sub>h2{
+        font-size: 5vw;
+    }
+    .sub>h3{
+        font-size: 2vw;
+    }
+    .footer{
+         height: 25vw;
+    }
 }

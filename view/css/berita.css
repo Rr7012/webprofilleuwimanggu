@@ -1,5 +1,5 @@
 .konten{
-    padding: 8vw 5vw 0;
+    padding: 3vw 5vw 0;
     box-sizing: border-box;
 }
 .background{
@@ -89,6 +89,8 @@
     padding-top: 0.5vw;
 }
 .berita{
+    color: black;
+    text-decoration: none;
     width: 100%;
     height: 6.2vw;
     background-color: rgb(0, 132, 255, 0.2);
@@ -115,9 +117,9 @@ background-color: rgb(0, 132, 255, 0.35);
     font-size: 1vw;
     margin: 2vw 0;
     box-sizing: border-box;
-
+    
     display: -webkit-box;
-    -webkit-line-clamp: 3;       /* Batas maksimal 3 baris */
+    -webkit-line-clamp: 2;       /* Batas maksimal 3 baris */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -126,9 +128,9 @@ background-color: rgb(0, 132, 255, 0.35);
     opacity: 0.7;
 }
 .judul-konten-berita{
-    border-top: 0.1vw solid;
-    border-bottom: 0.1vw solid;
-    height: 7vw;
+    border-top: 0.2vw solid rgb(0,0,0,0.3);
+    border-bottom: 0.2vw solid rgb(0,0,0,0.3);;
+    min-height: 7vw;
     width: 100%;
     box-sizing: border-box;
     padding: 1vw 5vw;
@@ -137,22 +139,34 @@ background-color: rgb(0, 132, 255, 0.35);
     justify-content: center;
     align-items: center;
 }
+/* .judul-konten-berita > h2 {
+    height: 7vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
 .foto-konten-berita{
     width: 50%;
     height: 15vw;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     float: left;
     margin-right: 1vw;
     border-radius: 5% / 7%;
     overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0.4vw black;
 }
 .foto-konten-berita>img{
     width: 100%;
-    height: auto;
+    min-height: 100%;
+    max-height: 170%;
     float: left;
+    /* float: top; */
 }
 .konten-berita{
     margin-top: 3vw;
+    padding-bottom: 3vw;
     text-indent: 2vw;
 }
 .konten-berita>p{

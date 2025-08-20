@@ -1,32 +1,21 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDkCWMaH4T2W7Ix2VaHPmA4eD7c88dvpXk",
-  authDomain: "webprofilesdn.firebaseapp.com",
-  databaseURL: "https://webprofilesdn-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "webprofilesdn",
-  storageBucket: "webprofilesdn.appspot.com",
-  messagingSenderId: "338937569949",
-  appId: "1:338937569949:web:7c2f9fcfdbd97784bbaa74",
-  measurementId: "G-PX6RRFQQGL"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// listberita.js
+import { db } from "./koneksi.js";
+import { ambilWejangan } from "./wejangan.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 let items = [];
 const itemsPerPage = 9;
 let currentPage = 1;
 
-// Ambil berita dari Firestore
 async function getBerita() {
   const snapshot = await getDocs(collection(db, "berita"));
-  items = snapshot.docs.map(doc => doc.data());
-  update(); // render halaman pertama
+  items = snapshot.docs
+    .map(doc => ({ id: doc.id, ...doc.data() }))
+    .sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+  update();
 }
 
-// Tampilkan item
+
 function displayItems(items, container, page, perPage) {
   container.innerHTML = "";
   const start = (page - 1) * perPage;
@@ -38,7 +27,6 @@ function displayItems(items, container, page, perPage) {
     a.href = `berita.html?id=${item.id}`;
     a.className = "berita";
     const fotoURL = item.foto || "../image/gambar/default.jpg";
-
     a.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.5) 30%, transparent 50%), url("${fotoURL}")`;
 
     a.addEventListener("mouseenter", () => {
@@ -61,7 +49,6 @@ function displayItems(items, container, page, perPage) {
   }
 }
 
-// Buat pagination
 function setupPagination(items, container, perPage) {
   container.innerHTML = "";
   const pageCount = Math.ceil(items.length / perPage);
@@ -142,4 +129,6 @@ function update() {
 }
 
 // Inisialisasi
+
 getBerita();
+ambilWejangan();
